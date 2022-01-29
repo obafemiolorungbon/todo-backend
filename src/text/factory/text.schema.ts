@@ -13,7 +13,7 @@ export class TextUpload {
   securePhrase: string;
   @Prop({ required: true })
   hashedPayload: string;
-  @Prop({ type: Date, expires: '30s', default: Date.now })
+  @Prop({ type: Date, expires: '59m', default: Date.now })
   createdAt: Date;
 }
 
