@@ -9,7 +9,7 @@ export class FileDTO {
       type: 'image',
       link: 'https://cloudinary.upload/some-weird-alphanumeric',
       size: '202230',
-      uploadDate: '2021-23-23',
+      uploadDate: '2022-01-30T08:27:55Z',
     }`,
   })
   @IsObject()
@@ -28,4 +28,13 @@ export class FileDTO {
   })
   @IsString()
   secretPhrase?: string;
+}
+
+export class GetFileDTO {
+  @ApiProperty({
+    description: `random alphanumeric key generated during upload`,
+    example: 'SD4SEA',
+  })
+  @IsString()
+  id: string;
 }

@@ -13,7 +13,6 @@ export class TextValidation implements NestMiddleware {
       const object = plainToInstance(TextDTO, body);
       const errors = await validate(object);
       if (errors.length > 0) {
-        console.log(errors);
         throw new BadRequestException('User Input Validation Failed!');
       }
       next();

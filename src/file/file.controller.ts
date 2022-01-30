@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import * as randomize from 'randomatic';
 import { FileService } from './file.service';
-import { FileDTO } from './file.dto';
+import { FileDTO, GetFileDTO } from './file.dto';
 import { HashingService } from 'src/common/hasher/hasher.service';
 import { Config } from '../config';
 const appConfig = Config[process.env.NODE_ENV || 'staging'];
@@ -50,7 +50,7 @@ export class FileController {
   }
 
   @Get(':id')
-  async getText(@Param() param: Record<string, string>): Promise<any> {
+  async getText(@Param() param: GetFileDTO): Promise<any> {
     const foundFile = await this.textService.findFile(param.id);
     if (foundFile) {
       const { hashedPayload } = foundFile;

@@ -5,7 +5,7 @@ export type FileUploadDocument = FileUpload & Document;
 
 @Schema()
 export class FileUpload {
-  @Prop({ required: true, unique: true })
+  @Prop({ required: true, unique: true, index: true })
   link: string;
   @Prop({ default: false })
   secure: boolean;

@@ -9,7 +9,7 @@ import {
 } from '@nestjs/common';
 import * as randomize from 'randomatic';
 import { TextService } from './text.service';
-import { TextDTO } from './text.dto';
+import { GetTextDTO, TextDTO } from './text.dto';
 import { HashingService } from 'src/common/hasher/hasher.service';
 import { Config } from '../config';
 const appConfig = Config[process.env.NODE_ENV || 'staging'];
@@ -35,11 +35,6 @@ export class TextController {
       securePhrase: body.secretPhrase,
       createdAt: new Date(),
     });
-    console.log(savedWord);
-    // save, link, hashed word,
-    //index the db using the link
-    // save that into the db,
-    //return the link
     return {
       status: true,
       url: savedWord.link,
@@ -47,7 +42,7 @@ export class TextController {
   }
 
   @Get(':id')
-  async getText(@Param() param: Record<string, string>): Promise<any> {
+  async getText(@Param() param: GetTextDTO): Promise<any> {
     const foundWord = await this.textService.findText(param.id);
     if (foundWord) {
       const { hashedPayload } = foundWord;

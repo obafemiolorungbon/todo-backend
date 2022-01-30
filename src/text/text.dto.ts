@@ -23,3 +23,11 @@ export class TextDTO {
   @IsString()
   secretPhrase?: string;
 }
+export class GetTextDTO {
+  @ApiProperty({
+    description: `random alphanumeric key generated during upload`,
+    example: 'AEWEA',
+  })
+  @IsString()
+  id: string;
+}

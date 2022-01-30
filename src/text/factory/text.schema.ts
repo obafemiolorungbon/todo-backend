@@ -5,7 +5,7 @@ export type TextUploadDocument = TextUpload & Document;
 
 @Schema()
 export class TextUpload {
-  @Prop({ required: true, unique: true })
+  @Prop({ required: true, unique: true, index: true })
   link: string;
   @Prop({ default: false })
   secure: boolean;
