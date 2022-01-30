@@ -13,7 +13,7 @@ export class FileDTO {
     }`,
   })
   @IsObject()
-  body?: object;
+  body?: Record<string, unknown>;
 
   @ApiProperty({
     description: `boolean indicating if generated link should be secured or not`,
