@@ -10,7 +10,6 @@ import { plainToInstance } from 'class-transformer';
 @Injectable()
 export class GlobalValidationPipe implements PipeTransform {
   async transform(value: any, { metatype }: ArgumentMetadata) {
-    //convert incoming plain POST data to typed object
     const object = plainToInstance(metatype, value);
     const errors = await validate(object);
     if (errors.length > 0) {

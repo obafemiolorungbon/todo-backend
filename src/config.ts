@@ -9,8 +9,6 @@ export const Config = {
       connectTimeoutMS: 0,
       useNewUrlParser: true,
     },
-    sendgrid_api_key:
-      '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',
   },
   staging: {
     port: process.env.PORT || 1997,
@@ -22,11 +20,6 @@ export const Config = {
       connectTimeoutMS: 0,
       useNewUrlParser: true,
     },
-    FROM: 'obafedance@gmail.com',
-    RECYFRICA_EMAIL: 'obafejo@gmail.com',
-    CONTACT_TEMPLATE_URL: './contact-us.handlebars',
-    sendgrid_api_key:
-      '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',
   },
   test: {
     port: process.env.PORT || 1997,
@@ -38,7 +31,5 @@ export const Config = {
       connectTimeoutMS: 0,
       useNewUrlParser: true,
     },
-    sendgrid_api_key:
-      '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',
   },
 };
